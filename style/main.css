@@ -8,7 +8,7 @@ body {
   width: 1140px;
   margin: 0 auto;
 }
-.padding {
+.padding__45px {
   padding: 0 45px;
 }
 .horisontal__line {
@@ -69,16 +69,15 @@ img {
 }
 .contact ul li {
   list-style-type: none;
-  margin-bottom: 7px;
-  font-size: 12px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .red__circle {
   position: relative;
 }
 .red__circle::after {
-  animation: bli 0.5s infinite linear;
-
+  animation: bli 1s infinite linear;
   content: "";
   display: block;
   position: absolute;
@@ -102,8 +101,41 @@ img {
   }
 }
 
+.github {
+  text-decoration: underline;
+}
+
 /* education */
 .education {
   margin-top: 35px;
 }
-/* work experience */
+/* footer */
+footer {
+  padding-bottom: 50px;
+}
+@media (max-width: 1200px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 340px;
+  }
+  .header_wrapper {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .contact {
+    border-left: none;
+  }
+  span {
+    display: block;
+    text-align: right;
+  }
+  .education {
+    margin-top: 0;
+  }
+}
