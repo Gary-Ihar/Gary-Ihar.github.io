@@ -1,0 +1,109 @@
+body {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(74, 74, 74);
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+.padding {
+  padding: 0 45px;
+}
+.horisontal__line {
+  display: flex;
+  align-items: center;
+}
+h3::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgb(182, 182, 182);
+  margin-left: 0.75em;
+}
+.date {
+  font-weight: 500;
+}
+h4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gray_color {
+  color: rgb(182, 182, 182);
+}
+a {
+  text-decoration: none;
+  color: rgb(74, 74, 74);
+}
+
+/* header */
+
+header {
+  margin-top: 45px;
+}
+.header_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  display: block;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.name_surname {
+  flex-grow: 1;
+  align-self: center;
+  padding-left: 9%;
+}
+.name_surname h2 {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.contact {
+  align-self: center;
+  border-left: 1px solid rgb(182, 182, 182);
+}
+.contact ul li {
+  list-style-type: none;
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.red__circle {
+  position: relative;
+}
+.red__circle::after {
+  animation: bli 0.5s infinite linear;
+
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: -12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+@keyframes bli {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* education */
+.education {
+  margin-top: 35px;
+}
+/* work experience */
