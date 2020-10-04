@@ -119,6 +119,10 @@ footer {
 }
 
 @media (max-width: 800px) {
+  .name_surname h1,
+  h2 {
+    text-align: center;
+  }
   .container {
     width: 340px;
   }
