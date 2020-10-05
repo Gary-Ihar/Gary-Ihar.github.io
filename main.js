@@ -1,5 +1,5 @@
 const form = document.querySelectorAll("form"),
-  windowChatUser = document.querySelectorAll(".test"),
+  windowChatUser = document.querySelectorAll(".window-chat"),
   input = document.querySelectorAll("input");
 form.forEach((form) =>
   form.addEventListener("submit", (e) => {

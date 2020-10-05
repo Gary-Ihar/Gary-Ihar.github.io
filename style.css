@@ -20,7 +20,7 @@
 .chat-field:last-child {
   border-left: 1px solid indianred;
 }
-.test {
+.window-chat {
   min-height: 90%;
   max-height: 90%;
   font-size: 25px;
