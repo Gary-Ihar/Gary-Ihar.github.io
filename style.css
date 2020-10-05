@@ -20,7 +20,7 @@
 .chat-field:last-child {
   border-left: 1px solid indianred;
 }
-.window-chat {
+.window {
   min-height: 90%;
   max-height: 90%;
   font-size: 25px;
@@ -71,11 +71,11 @@ p {
   background-color: salmon;
   text-align: right;
 }
-.window-chat2 p {
+.chat2 p {
   text-align: right;
   background-color: salmon;
 }
-.window-chat2 .text-right {
+.chat2 .text-right {
   background-color: indianred;
   text-align: left;
 }
