@@ -1,131 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/normalize.css" />
-    <link rel="stylesheet" href="style/main.css" />
-    <link rel="icon" href="img/komediant.png" type="image/png" />
-    <link rel="shortcut icon" href="img/komediant.png" type="image/png" />
-    <title>Резюме</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="header_wrapper">
-          <img src="/img/photo.jpg" alt="Тут должно было быть мое фото:)" />
-
-          <div class="name_surname">
-            <h1>Слабухо Игорь</h1>
-            <h2 class="gray_color">Junior Frontend Developer</h2>
-          </div>
-          <div class="contact">
-            <ul>
-              <li class="">Минск, Беларусь</li>
-              <li class="red__circle">
-                <a href="tel:+375447520995">+375(44)752-0-995</a>
-              </li>
-              <li class="red__circle">
-                <a href="mailto:yakuzawot6@gmail.com">yakuzawot6@gmail.com</a>
-              </li>
-              <li>Дата рождения: 21.03.1994</li>
-              <li>Военный билет на руках.</li>
-              <li>
-                Мой
-                <a
-                  class="github"
-                  target="_blank"
-                  href="https://github.com/Gary-Ihar"
-                  >GitHub-аккаунт</a
-                >.
-              </li>
-            </ul>
-          </div>
+    <div class="chat-app">
+      <div class="chat-field">
+        <div class="window-chat1 test"></div>
+        <div class="form-to-send-a-message">
+          <form id="user1">
+            <input type="text" />
+            <button>Send</button>
+          </form>
         </div>
       </div>
-    </header>
-    <section class="education">
-      <div class="container">
-        <h3>Образование</h3>
-
-        <div class="padding__45px">
-          <div>
-            <h4>MyFreedom <span class="date">01.2020 - 07.2020</span></h4>
-            <p class="gray_color">Frontend developer</p>
-            <p>Стэк технологий:</p>
-            <ol>
-              <li>HTML</li>
-              <li>CSS(SCSS)</li>
-              <li>JS(ES5 , ES6+, Promise, AJAX)</li>
-              <li>React + Redux (thunk/saga)</li>
-              <li>Git</li>
-              <li>Node.js</li>
-              <li>SQL</li>
-              <li>Webpack</li>
-            </ol>
-            <div>
-              <h4>БГУИР <span class="date">2014 - 2018</span></h4>
-              <p class="gray_color">Факультет заочного обучения</p>
-              <p>
-                Специальность: "Радиотехника (Программируемые радиоэлектронные
-                средства)"
-              </p>
-            </div>
-          </div>
+      <div class="chat-field">
+        <div class="window-chat2 test"></div>
+        <div class="form-to-send-a-message">
+          <form id="user2">
+            <input type="text" />
+            <button>Send</button>
+          </form>
         </div>
       </div>
-    </section>
-    <section>
-      <div class="container">
-        <h3>Опыт работы</h3>
-        <div class="padding__45px">
-          <h4>GlobexIT <span class="date">08.2020 - н.вр</span></h4>
-          <p class="gray_color">JavaScript разработчик</p>
-          <ol>
-            <li>Создание скриптов и зависимосте на платформе WebTutor</li>
-          </ol>
-          <h4>
-            ООО "Сейлз Телеком" <span class="date">02.2018 - 07.2020</span>
-          </h4>
-          <p class="gray_color">Старший специалист по работе с клиентами</p>
-          <ol>
-            <li>
-              Обработка заявок с обращениями пользователей проектов компании
-              Wargaming.
-            </li>
-            <li>Разработка систем по обучению сотрудников.</li>
-          </ol>
-          <h4>ООО "АС Форос" <span class="date">01.2017 - 01.2018</span></h4>
-          <p class="gray_color">Комплектовщик</p>
-          <ol>
-            <li>Комплектовка товара.</li>
-            <li>Сбор заявок.</li>
-            <li>Доставка товара.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="container">
-        <h3>Дополнительная информация</h3>
-        <div class="padding__45px">
-          <p>
-            Привет. Я активно развиваюсь в Frontend
-            разработке(learn.javascript.ru , habr , youtube.com). Ищу работу
-            связанную с созданием web-приложений. Я не конфликтный, легок в
-            общении, быстро обучаем, отлично воспринимаю критику. Заинтересован
-            в долгом найме, честным и качественным трудовым взаимоотношениям.
-          </p>
-          <p>
-            Из хобби: люблю рыбалку, автомобили, автомузыку, компьютерные игры.
-          </p>
-          <p>Владение языками:</p>
-          <ol>
-            <li>Английский - А2</li>
-            <li>Немецкий - B1</li>
-          </ol>
-        </div>
-      </div>
-    </footer>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>

@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chat-app {
+  width: 1000px;
+  height: 600px;
+  margin: 0 auto;
+  font-size: 0;
+  border: 1px solid indianred;
+  border-radius: 5px;
+}
+.chat-field {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+.chat-field:last-child {
+  border-left: 1px solid indianred;
+}
+.test {
+  min-height: 90%;
+  max-height: 90%;
+  font-size: 25px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+}
+.form-to-send-a-message {
+  border-top: 1px solid indianred;
+  height: 10%;
+  padding-top: 15px;
+}
+form {
+  height: 100%;
+  margin: 0 10px 0 10px;
+}
+input {
+  padding: 5px;
+  width: 80%;
+  border: none;
+  background-color: wheat;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+}
+button {
+  background-color: indianred;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 20%;
+  font-weight: 600;
+  color: wheat;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+}
+p {
+  margin: 10px 0;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 7px;
+  background-color: indianred;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* ниже костыль, простите */
+.text-right {
+  background-color: salmon;
+  text-align: right;
+}
+.window-chat2 p {
+  text-align: right;
+  background-color: salmon;
+}
+.window-chat2 .text-right {
+  background-color: indianred;
+  text-align: left;
+}
+/* ----------------------- */
