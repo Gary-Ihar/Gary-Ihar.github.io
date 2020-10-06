@@ -84,8 +84,3 @@ function makeLastStep(wind, p, div) {
   wind.append(div);
   wind.scrollTop = wind.scrollHeight;
 }
-
-// let arr = ["123", "", "", "asdsfadsgdf", "", "asdsad", ""];
-// // ['123','','asdsfadsgdf','','asdsad']
-
-// console.log(newMessage);
