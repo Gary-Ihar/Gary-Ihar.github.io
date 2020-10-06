@@ -3,12 +3,15 @@ const form = document.querySelectorAll("form"),
   textarea = document.querySelectorAll("textarea");
 
 form.forEach((form) => {
-  let id = "";
+  let formId = "";
+
+  textarea.forEach((textarea) =>
+    textarea.addEventListener("focus", () => (formId = textarea.parentNode.id))
+  );
   form.addEventListener("submit", (e) => {
-    id = e.target.id;
     e.preventDefault();
     if (form.firstChild.nextSibling.value !== "") {
-      render(form.firstChild.nextSibling.value.split(/\n/g), id); // теперь передам массив разбитый по enter
+      render(form.firstChild.nextSibling.value.split(/\n/g), formId); // теперь передам массив разбитый по enter
       textarea.forEach((textarea) => (textarea.value = ""));
     }
   });
@@ -23,7 +26,7 @@ form.forEach((form) => {
       }
     }
     pressKey.clear();
-    render(form.firstChild.nextSibling.value.split(/\n/g), id);
+    render(form.firstChild.nextSibling.value.split(/\n/g), formId);
     textarea.forEach((textarea) => (textarea.value = ""));
   });
   form.addEventListener("keyup", (e) => {
@@ -34,11 +37,13 @@ form.forEach((form) => {
 function render(message, userId) {
   if (message.length === 1) {
     // если абзацев нет, то все штатно
-    windowChatUser.forEach((wind) => {
-      const { div, p } = createdElementDivAndP(userId);
-      p.textContent = message[0];
-      makeLastStep(wind, p, div);
-    });
+    if (message[0] !== "") {
+      windowChatUser.forEach((wind) => {
+        const { div, p } = createdElementDivAndP(userId);
+        p.textContent = message[0];
+        makeLastStep(wind, p, div);
+      });
+    }
   } else {
     windowChatUser.forEach((wind) => {
       const { div } = createdElementDivAndP(userId);
