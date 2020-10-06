@@ -27,7 +27,7 @@ form.forEach((form) => {
     textarea.forEach((textarea) => (textarea.value = ""));
   });
   form.addEventListener("keyup", (e) => {
-    pressKey.delete(e.code);
+    pressKey.delete(e.key);
   });
 });
 
