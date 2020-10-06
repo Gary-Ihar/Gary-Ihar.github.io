@@ -21,29 +21,30 @@
   border-left: 1px solid indianred;
 }
 .window {
-  min-height: 90%;
-  max-height: 90%;
+  min-height: 88%;
+  max-height: 88%;
   font-size: 25px;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 10px;
 }
+
 .form-to-send-a-message {
   border-top: 1px solid indianred;
-  height: 10%;
   padding-top: 15px;
 }
 form {
-  height: 100%;
+  display: flex;
   margin: 0 10px 0 10px;
 }
-input {
+textarea {
   padding: 5px;
   width: 80%;
   border: none;
   background-color: wheat;
   outline: none;
   border-radius: 5px 0 0 5px;
+  resize: none;
 }
 button {
   background-color: indianred;
@@ -58,25 +59,36 @@ button {
 }
 p {
   margin: 10px 0;
-  border: 1px solid grey;
-  border-radius: 3px;
   padding: 7px;
-  background-color: indianred;
   max-width: 100%;
   word-wrap: break-word;
 }
+.window div {
+  border-radius: 3px;
+}
 
-/* ниже костыль, простите */
+/* -----ориентация для текста лево/право----- */
 .text-right {
-  background-color: salmon;
   text-align: right;
 }
 .chat2 p {
   text-align: right;
-  background-color: salmon;
 }
+
 .chat2 .text-right {
-  background-color: indianred;
   text-align: left;
 }
-/* ----------------------- */
+
+/* -----разбивка на разные цвета------------- */
+.chat1 div {
+  background-color: indianred;
+}
+.chat1 .bg-color {
+  background-color: salmon;
+}
+.chat2 div {
+  background-color: salmon;
+}
+.chat2 .bg-color {
+  background-color: indianred;
+}
