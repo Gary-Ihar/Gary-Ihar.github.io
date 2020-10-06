@@ -35,24 +35,35 @@ form.forEach((form) => {
 });
 
 function render(message, userId) {
-  if (message.length === 1) {
+  //-------убираем спам обзацами
+  let newMessage = [];
+  for (let i = 0; i < message.length; i++) {
+    if (message[i] !== "") newMessage.push(message[i]);
+    if (message[i] === "" && message[i + 1] !== "") newMessage.push(message[i]);
+  }
+  if (newMessage[newMessage.length - 1] === "") newMessage.pop();
+  //---------------------------------
+  if (newMessage.length === 1) {
     // если абзацев нет, то все штатно
-    if (message[0] !== "") {
+    if (newMessage[0] !== "") {
       windowChatUser.forEach((wind) => {
         const { div, p } = createdElementDivAndP(userId);
-        p.textContent = message[0];
+        p.textContent = newMessage[0];
         makeLastStep(wind, p, div);
       });
     }
   } else {
     windowChatUser.forEach((wind) => {
       const { div } = createdElementDivAndP(userId);
-      for (let i = 0; i < message.length; i++) {
-        if (i === message.length - 1 && message[message.length - 1] === "") {
+      for (let i = 0; i < newMessage.length; i++) {
+        if (
+          i === newMessage.length - 1 &&
+          newMessage[newMessage.length - 1] === ""
+        ) {
           // если после "абзаца" ничего нет(пустая строка)
         } else {
           const { p } = createdElementDivAndP(userId);
-          p.textContent = message[i];
+          p.textContent = newMessage[i];
           makeLastStep(wind, p, div);
         }
       }
@@ -73,3 +84,8 @@ function makeLastStep(wind, p, div) {
   wind.append(div);
   wind.scrollTop = wind.scrollHeight;
 }
+
+// let arr = ["123", "", "", "asdsfadsgdf", "", "asdsad", ""];
+// // ['123','','asdsfadsgdf','','asdsad']
+
+// console.log(newMessage);
