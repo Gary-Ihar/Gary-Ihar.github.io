@@ -484,6 +484,7 @@ select {
   margin-right: 20px;
   border-radius: 20px;
 }
+
 /* -----------------------------------------------------------------Section 5 */
 .section5 {
   display: flex;
@@ -523,6 +524,9 @@ select {
   display: flex;
   align-items: center;
 }
+.section5__pay button {
+  cursor: pointer;
+}
 .section5__pay button:first-child {
   border: 1px solid #ff7f00;
   color: #ff7f00;
@@ -534,4 +538,67 @@ select {
   margin-top: 7px;
   background: none;
   border: none;
+}
+.section5__time-to-end-sale {
+  background-color: #ff7f00;
+  min-width: 380px;
+  padding: 55px 75px 0 75px;
+}
+.section5__time-to-end-sale__head-text {
+  font-family: Montserrat-SemiBold;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+.section5__time-to-end-sale__time {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 55px;
+}
+.section5__time-to-end-sale__time p {
+  text-align: center;
+  font-size: 12px;
+}
+.white {
+  color: white;
+}
+.black {
+  color: black;
+}
+.day,
+.hour,
+.min,
+.sec {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  position: relative;
+  line-height: 45px;
+}
+.day::after,
+.hour::after,
+.min::after {
+  content: url("/img/section5/dot.png");
+  position: absolute;
+  top: 6px;
+  right: -10px;
+}
+.section5__time-to-end-sale__load {
+  height: 8px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.section5__time-to-end-sale__load-2 {
+  height: 8px;
+  background-color: #4a4f58;
+  width: 33%;
+  border-radius: 8px;
+}
+.section5__time-to-end-sale__info {
+  display: flex;
+  justify-content: space-between;
+}
+.section5__time-to-end-sale__info span {
+  font-weight: bold;
 }
