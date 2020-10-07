@@ -3,30 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="chat-app">
-      <div class="chat-field">
-        <div class="window chat1"></div>
-        <div class="form-to-send-a-message">
-          <form id="user1">
-            <textarea wrap="soft"></textarea>
-            <button>Send</button>
-          </form>
+    <header>
+      <div class="container">
+        <div class="head-info-block">
+          <div class="head-info-left-block">
+            <div>
+              <p>
+                Вас обслуживает <span class="orange-color">офис - Минск</span>
+                <button class="button-arrow-down">
+                  <img src="/img/header/arrow-down.png" alt="arrow" />
+                </button>
+              </p>
+            </div>
+            <div class="head-info-left-block__contac">
+              <a href="tel:+375291232323">+375 29 123 23 23</a>
+              <a class="pos" href="#"
+                ><img src="/img/header/phone1.png" alt="phone1"
+              /></a>
+              <a class="pos" href="#"
+                ><img src="/img/header/phone2.png" alt="phone2"
+              /></a>
+              <a class="pos" href="#"
+                ><img src="/img/header/tg.png" alt="tg"
+              /></a>
+              <button class="button-arrow-down">
+                <img src="/img/header/arrow-down.png" alt="arrow" />
+              </button>
+            </div>
+          </div>
+          <div class="head-info-right-block">
+            <div class="head-info-right-block__social">
+              <a href="#"><img src="/img/header/inst.png" alt="insta" /></a>
+              <a href="#"
+                ><img src="/img/header/facebook.png" alt="facebook"
+              /></a>
+              <a href="#"><img src="/img/header/vk.png" alt="vk" /></a>
+              <a href="#"><img src="/img/header/ok.png" alt="ok" /></a>
+              <a href="#"><img src="/img/header/share.png" alt="share" /></a>
+            </div>
+            <div class="head-info-right-block__signIn">
+              <button>Войти</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="chat-field">
-        <div class="window chat2"></div>
-        <div class="form-to-send-a-message">
-          <form id="user2">
-            <textarea wrap="soft"></textarea>
-            <button>Send</button>
-          </form>
+    </header>
+    <nav>
+      <div class="container">
+        <div class="nav-menu">
+          <div class="nav-menu__logo">
+            <p>LOGOLOGO</p>
+            <div class="nav-menu__logo_catalog">
+              <button><img src="/img/header/burger.png" alt="" /></button>
+              <p>каталог</p>
+            </div>
+          </div>
+          <div class="nav-menu__center">
+            <div class="nav-menu__center-search">
+              <input type="text" placeholder="Введите текст" />
+              <div class="nav-menu__center-search_select">
+                <select>
+                  <option selected>Все категории</option>
+                  <option>Категория 1</option>
+                  <option>Категория 2</option>
+                  <option>Категория 3</option>
+                  <option>Категория 4</option>
+                </select>
+              </div>
+              <button>
+                <img src="/img/header/big-loupe.png" alt="" />
+              </button>
+            </div>
+            <div class="nav-menu__center_menu">
+              <p>главная</p>
+              <p>покупателю</p>
+              <p>блог</p>
+              <p>о нас</p>
+              <p>контакты</p>
+            </div>
+          </div>
+          <div class="nav-menu__work-time">
+            <div class="nav-menu__work-time_days">
+              <p><span class="orange-color">09:00 - 19:00</span> (пн-пт)</p>
+              <p><span class="orange-color">10:00 - 16:00</span> (сб)</p>
+            </div>
+            <div class="nav-menu__work-time_basket">
+              <button><img src="/img/header/arrows.png" alt="" /></button>
+              <button><img src="/img/header/shopping-bag.png" alt="" /></button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <script src="main.js"></script>
+    </nav>
   </body>
 </html>

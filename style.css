@@ -1,94 +1,240 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 13px;
 }
 
-.chat-app {
-  width: 1000px;
-  height: 600px;
+.container {
+  width: 1280px;
   margin: 0 auto;
-  font-size: 0;
-  border: 1px solid indianred;
-  border-radius: 5px;
-}
-.chat-field {
-  display: inline-block;
-  width: 50%;
-  height: 100%;
-}
-.chat-field:last-child {
-  border-left: 1px solid indianred;
-}
-.window {
-  min-height: 88%;
-  max-height: 88%;
-  font-size: 25px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 10px;
 }
 
-.form-to-send-a-message {
-  border-top: 1px solid indianred;
-  padding-top: 15px;
+.orange-color {
+  color: #ff7f00;
 }
-form {
+
+header {
+  background-color: #f5f6fb;
+  color: #4a4f58;
+  margin-bottom: 40px;
+}
+
+.head-info-block {
   display: flex;
-  margin: 0 10px 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 20px;
 }
-textarea {
-  padding: 5px;
-  width: 80%;
+
+/* --------------------------------------------------------Левая половина хедера */
+.head-info-left-block div {
+  display: inline-block;
+}
+
+.head-info-left-block p button {
+  margin-left: 40px;
+}
+.button-arrow-down {
+  background-color: inherit;
   border: none;
-  background-color: wheat;
   outline: none;
-  border-radius: 5px 0 0 5px;
-  resize: none;
-}
-button {
-  background-color: indianred;
-  border: none;
   cursor: pointer;
-  padding: 5px;
-  width: 20%;
+}
+.head-info-left-block__contac {
+  margin-left: 90px;
+}
+.head-info-left-block__contac a:first-child {
   font-weight: 600;
-  color: wheat;
-  border-radius: 0 5px 5px 0;
+  margin-right: 18px;
+  color: #4a4f58;
+  text-decoration: none;
+}
+.head-info-left-block__contac button {
+  margin-left: 18px;
+}
+.pos {
+  top: 3px;
+  position: relative;
+}
+/* -------------------------------------------------------Правая половина хедера */
+.head-info-right-block {
+  display: flex;
+  align-items: center;
+}
+
+.head-info-right-block__signIn {
+  padding: 0 84px;
+  border-left: 1px solid #e3e8ee;
+}
+.head-info-right-block__signIn button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.head-info-right-block__signIn button::before {
+  content: url("/img/header/sign.png");
+  position: relative;
+  top: 3px;
+  left: -9px;
+}
+.head-info-right-block__social a {
+  margin-right: 25px;
+}
+.head-info-right-block__social a:last-child {
+  margin-right: 60px;
+}
+/* --------------------------------------------------------------------------nav */
+.nav-menu {
+  display: flex;
+  height: 125px;
+}
+/* -------------------------------------------------------------------------Лого */
+.nav-menu__logo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  text-transform: uppercase;
+}
+.nav-menu__logo p {
+  color: #4a4f58;
+  font-weight: bold;
+  font-size: 28px;
+}
+.nav-menu__logo_catalog {
+  background-color: #4a4f58;
+  display: flex;
+  justify-content: center;
+  padding: 20px 60px;
+  padding-right: 109px;
+}
+.nav-menu__logo_catalog button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 17px;
+}
+.nav-menu__logo_catalog p {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+/* -----------------------------------------------------------------Меню и поиск */
+.nav-menu__center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-grow: 1;
+  margin: 0 40px;
+}
+.nav-menu__center-search {
+  border: 3px solid #edeff5;
+  display: flex;
+  align-items: center;
+  max-width: 560px;
+  background-color: #edeff5;
+}
+.nav-menu__center-search input,
+select {
+  padding: 10px 0;
+  border: none;
   outline: none;
 }
-p {
-  margin: 10px 0;
-  padding: 7px;
-  max-width: 100%;
-  word-wrap: break-word;
-}
-.window div {
-  border-radius: 3px;
+.nav-menu__center-search_select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: white;
 }
 
-/* -----ориентация для текста лево/право----- */
-.text-right {
-  text-align: right;
+.nav-menu__center-search input {
+  padding-left: 30px;
+  padding-right: 100px;
 }
-.chat2 p {
-  text-align: right;
+.nav-menu__center-search select {
+  border-left: 1px solid #edeff5;
+  padding: 0 20px;
+  margin-right: 15px;
+  width: 168px;
+}
+.nav-menu__center-search button {
+  height: 100%;
+  width: 65px;
+  background-color: #edeff5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-top: 3px;
 }
 
-.chat2 .text-right {
-  text-align: left;
+.nav-menu__center_menu {
+  display: flex;
+  background-color: #ff7f00;
+}
+.nav-menu__center_menu p {
+  color: white;
+  background-color: #ff7f00;
+  text-transform: uppercase;
+  padding: 20px 40px 20px 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.nav-menu__center_menu p:first-child {
+  background-color: #ff9b37;
+}
+/* -----------------------------------------------------------------Время работы */
+.nav-menu__work-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.nav-menu__work-time_days p {
+  position: relative;
+  font-size: 13px;
+  font-weight: 600;
+}
+.nav-menu__work-time_days p span {
+  font-size: 16px;
+}
+.nav-menu__work-time_days p:first-child::before {
+  content: url("/img/header/watch.png");
+  position: absolute;
+  top: 5px;
+  left: -20px;
 }
 
-/* -----разбивка на разные цвета------------- */
-.chat1 div {
-  background-color: indianred;
+.nav-menu__work-time_basket button {
+  position: relative;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 50px;
 }
-.chat1 .bg-color {
-  background-color: salmon;
+.nav-menu__work-time_basket {
+  padding: 20px 0;
 }
-.chat2 div {
-  background-color: salmon;
+.nav-menu__work-time_basket button::after {
+  content: "0";
+  position: absolute;
+  background-color: #edeff5;
+  width: 17px;
+  height: 17px;
+  line-height: 18px;
+  vertical-align: middle;
+  border-radius: 50%;
+  right: -20px;
 }
-.chat2 .bg-color {
-  background-color: indianred;
+.nav-menu__work-time_basket button:first-child::after {
+  top: -5px;
 }
