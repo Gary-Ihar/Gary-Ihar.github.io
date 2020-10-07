@@ -30,7 +30,30 @@ h2 {
   font-size: 36px;
   font-family: Montserrat-Bold;
 }
-
+/* ----------------------------------------------------------------------SALE */
+.sale-p {
+  color: #ff7f00;
+}
+.sale-p span {
+  font-family: Montserrat-Bold;
+  text-decoration: line-through;
+  color: black;
+}
+.sale-block::before {
+  content: "АКЦИЯ";
+  position: absolute;
+  color: white;
+  background-color: #84d7e8;
+  padding: 0 5px;
+}
+.new-position::before {
+  content: "НОВИНКА";
+  position: absolute;
+  color: white;
+  background-color: #f36595;
+  padding: 0 5px;
+}
+/* --------------------------------------------------------------------header */
 header {
   background-color: #f5f6fb;
   color: #4a4f58;
@@ -380,7 +403,7 @@ select {
   font-size: 20px;
   font-family: Montserrat-Bold;
 }
-/* -----------------------------------------------------------------Section 3 */
+/* -----------------------------------------------------------------Section 4 */
 .section4 {
   margin-bottom: 50px;
 }
@@ -423,11 +446,7 @@ select {
   cursor: pointer;
   background-color: inherit;
 }
-.section4__items button:first-child {
-  margin-right: 15px;
-}
-.section4__items-card__foto,
-.section4__items-card__pay {
+.section4__items-card__foto {
   text-align: center;
 }
 .section4__items-card__foto {
@@ -435,12 +454,31 @@ select {
 }
 .section4__items-card__foto p {
   font-family: Montserrat-Bold;
+  padding-bottom: 10px;
 }
-.sale {
+
+.section4__items-card__info {
+  padding: 10px 0;
+  border-top: 1px solid #e3e8ee;
+  border-bottom: 1px solid #e3e8ee;
+  margin-bottom: 20px;
+}
+.section4__items-card__info p:first-child {
+  color: #47a7d1;
+}
+.section4__items-card {
+  position: relative;
+  margin: 0 20px;
+}
+.section4__items-card__pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section4__items-card__pay button:first-child {
+  border: 1px solid #ff7f00;
   color: #ff7f00;
-}
-.sale span {
-  font-family: Montserrat-Bold;
-  text-decoration: line-through;
-  color: black;
+  padding: 10px 30px;
+  margin-right: 20px;
+  border-radius: 20px;
 }
