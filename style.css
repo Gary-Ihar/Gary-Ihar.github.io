@@ -16,6 +16,11 @@
   color: #ff7f00;
 }
 
+h2 {
+  font-weight: bold;
+  font-size: 36px;
+}
+
 header {
   background-color: #f5f6fb;
   color: #4a4f58;
@@ -89,6 +94,9 @@ header {
   margin-right: 60px;
 }
 /* --------------------------------------------------------------------------nav */
+nav {
+  margin-bottom: 20px;
+}
 .nav-menu {
   display: flex;
   height: 125px;
@@ -197,6 +205,7 @@ select {
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
+  padding-right: 20px;
 }
 .nav-menu__work-time_days p {
   position: relative;
@@ -237,4 +246,88 @@ select {
 }
 .nav-menu__work-time_basket button:first-child::after {
   top: -5px;
+}
+/* -----------------------------------------------------------------Section 1 */
+.section1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 440px;
+  background: url("./img/section1/bg.png");
+  color: white;
+  margin-bottom: 60px;
+}
+.section1 p,
+.section1 p span {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.section1__buttons {
+  font-size: 15px;
+}
+.section1 h2 {
+  margin-top: 70px;
+
+  text-align: center;
+}
+.section1__circles-item {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #bebebe;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.section1__circles-item:hover {
+  background-color: #ff7f00;
+}
+.section1__buttons button {
+  padding: 12px 45px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.section1__buttons button:last-child {
+  margin-left: 10px;
+}
+/* -----------------------------------------------------------------Section 2 */
+.section2 {
+  font-size: 0;
+  display: flex;
+}
+.section2 div {
+  width: 630px;
+  min-height: 300px;
+  padding: 60px 0 0 60px;
+  color: white;
+}
+.section2__catalog1 {
+  background: url("/img/section2/bg1.png");
+}
+.section2__catalog2 {
+  margin-left: 20px;
+  background: url("/img/section2/bg2.png");
+}
+.section2__catalog1,
+.section2__catalog2 {
+  background-size: cover;
+  background-position: center;
+}
+.section2 p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  max-width: 70%;
+  font-size: 15px;
+}
+.section2 a {
+  background-color: #ff7f00;
+  color: white;
+  text-decoration: none;
+  padding: 15px 40px 15px 20px;
+  border-radius: 6px;
+  font-size: 15px;
 }
