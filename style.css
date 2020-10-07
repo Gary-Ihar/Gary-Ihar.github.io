@@ -7,6 +7,15 @@
   font-size: 13px;
 }
 
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url("/fonts/Montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url("/fonts/Montserrat/Montserrat-SemiBold.ttf");
+}
+
 .container {
   width: 1280px;
   margin: 0 auto;
@@ -19,6 +28,7 @@
 h2 {
   font-weight: bold;
   font-size: 36px;
+  font-family: Montserrat-Bold;
 }
 
 header {
@@ -298,6 +308,7 @@ select {
 .section2 {
   font-size: 0;
   display: flex;
+  margin-bottom: 30px;
 }
 .section2 div {
   width: 630px;
@@ -330,4 +341,106 @@ select {
   padding: 15px 40px 15px 20px;
   border-radius: 6px;
   font-size: 15px;
+}
+/* -----------------------------------------------------------------Section 3 */
+.section3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 130px;
+}
+.section3 button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.section3__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 289px;
+  min-height: 167px;
+}
+.section3__item:nth-child(2) {
+  background-image: url("/img/section3/шины.png");
+}
+.section3__item:nth-child(3) {
+  background-image: url("/img/section3/диски.png");
+}
+.section3__item:nth-child(4) {
+  background-image: url("/img/section3/сезон.png");
+}
+.section3__item:nth-child(5) {
+  background-image: url("/img/section3/диаметр.png");
+}
+.section3 p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Montserrat-Bold;
+}
+/* -----------------------------------------------------------------Section 3 */
+.section4 {
+  margin-bottom: 50px;
+}
+.section4__links {
+  border-bottom: 2px solid #e3e8ee;
+  font-size: 0;
+  display: flex;
+  margin-bottom: 60px;
+}
+.section4__links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #4a4f58;
+  transition: 0.2s ease;
+  font-family: Montserrat-SemiBold;
+}
+.section4__links-link {
+  transition: 0.2s ease;
+}
+.section4__links-link:hover {
+  background-color: #ff7f00;
+}
+.section4__links-link:hover a {
+  color: white;
+}
+.section4__links-link {
+  transition: 0.2s ease;
+  padding: 20px 80px;
+}
+.section4__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section4__items p {
+  text-align: center;
+}
+.section4__items button {
+  border: none;
+  cursor: pointer;
+  background-color: inherit;
+}
+.section4__items button:first-child {
+  margin-right: 15px;
+}
+.section4__items-card__foto,
+.section4__items-card__pay {
+  text-align: center;
+}
+.section4__items-card__foto {
+  padding-top: 40px;
+}
+.section4__items-card__foto p {
+  font-family: Montserrat-Bold;
+}
+.sale {
+  color: #ff7f00;
+}
+.sale span {
+  font-family: Montserrat-Bold;
+  text-decoration: line-through;
+  color: black;
 }
