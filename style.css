@@ -25,6 +25,10 @@
   color: #ff7f00;
 }
 
+.blue-color {
+  color: #4fbceb;
+}
+
 h2 {
   font-weight: bold;
   font-size: 36px;
@@ -463,9 +467,7 @@ select {
   border-bottom: 1px solid #e3e8ee;
   margin-bottom: 20px;
 }
-.section4__items-card__info p:first-child {
-  color: #47a7d1;
-}
+
 .section4__items-card {
   position: relative;
   margin: 0 20px;
@@ -481,4 +483,55 @@ select {
   padding: 10px 30px;
   margin-right: 20px;
   border-radius: 20px;
+}
+/* -----------------------------------------------------------------Section 5 */
+.section5 {
+  display: flex;
+  min-height: 350px;
+
+  margin-bottom: 30px;
+}
+.section5__sale {
+  padding: 55px 75px 0 55px;
+  min-width: 900px;
+  background: url("/img/section5/1.png");
+  background-size: cover;
+  background-position: center;
+}
+.section5__sale h2 {
+  color: white;
+  padding-bottom: 30px;
+}
+.section5__sale-info {
+  border-top: 1px solid #e3e8ee;
+  border-bottom: 1px solid #e3e8ee;
+  max-width: 595px;
+  padding: 20px 0;
+}
+.section5__sale-info p:last-child {
+  color: white;
+}
+.section5__sale-info .sale-p {
+  font-family: Montserrat-Bold;
+  padding-bottom: 20px;
+}
+.section5__sale-info .sale-p span {
+  color: white;
+}
+.section5__pay {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+.section5__pay button:first-child {
+  border: 1px solid #ff7f00;
+  color: #ff7f00;
+  padding: 10px 30px;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.section5__pay button:last-child {
+  margin-top: 7px;
+  background: none;
+  border: none;
 }
