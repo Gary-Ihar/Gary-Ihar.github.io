@@ -28,6 +28,9 @@
 .blue-color {
   color: #4fbceb;
 }
+button {
+  outline: none;
+}
 
 h2 {
   font-weight: bold;
