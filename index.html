@@ -2,307 +2,136 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="head-info-block">
-          <div class="head-info-left-block">
-            <div>
-              <p>
-                Вас обслуживает <span class="orange-color">офис - Минск</span>
-                <button class="button-arrow-down">
-                  <img src="/img/header/arrow-down.png" alt="arrow" />
-                </button>
-              </p>
-            </div>
-            <div class="head-info-left-block__contac">
-              <a href="tel:+375291232323">+375 29 123 23 23</a>
-              <a class="pos" href="#"
-                ><img src="/img/header/phone1.png" alt="phone1"
-              /></a>
-              <a class="pos" href="#"
-                ><img src="/img/header/phone2.png" alt="phone2"
-              /></a>
-              <a class="pos" href="#"
-                ><img src="/img/header/tg.png" alt="tg"
-              /></a>
-              <button class="button-arrow-down">
-                <img src="/img/header/arrow-down.png" alt="arrow" />
-              </button>
-            </div>
+    <div class="date-piker">
+      <input />
+      <div class="calendar">
+          <span id='close'>X</span>
+        <div class="one">
+          <div class="wrapper">
+            <button class="left"><</button>
+            <span class="mounth">test</span>
+            <button class="right">></button>
           </div>
-          <div class="head-info-right-block">
-            <div class="head-info-right-block__social">
-              <a href="#"><img src="/img/header/inst.png" alt="insta" /></a>
-              <a href="#"
-                ><img src="/img/header/facebook.png" alt="facebook"
-              /></a>
-              <a href="#"><img src="/img/header/vk.png" alt="vk" /></a>
-              <a href="#"><img src="/img/header/ok.png" alt="ok" /></a>
-              <a href="#"><img src="/img/header/share.png" alt="share" /></a>
-            </div>
-            <div class="head-info-right-block__signIn">
-              <button>Войти</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <nav>
-      <div class="container">
-        <div class="nav-menu">
-          <div class="nav-menu__logo">
-            <p>LOGOLOGO</p>
-            <div class="nav-menu__logo_catalog">
-              <button><img src="/img/header/burger.png" alt="" /></button>
-              <p>каталог</p>
-            </div>
-          </div>
-          <div class="nav-menu__center">
-            <div class="nav-menu__center-search">
-              <input type="text" placeholder="Введите текст" />
-              <div class="nav-menu__center-search_select">
-                <select>
-                  <option selected>Все категории</option>
-                  <option>Категория 1</option>
-                  <option>Категория 2</option>
-                  <option>Категория 3</option>
-                  <option>Категория 4</option>
-                </select>
-              </div>
-              <button>
-                <img src="/img/header/big-loupe.png" alt="" />
-              </button>
-            </div>
-            <div class="nav-menu__center_menu">
-              <p>главная</p>
-              <p>покупателю</p>
-              <p>блог</p>
-              <p>о нас</p>
-              <p>контакты</p>
-            </div>
-          </div>
-          <div class="nav-menu__work-time">
-            <div class="nav-menu__work-time_days">
-              <p><span class="orange-color">09:00 - 19:00</span> (пн-пт)</p>
-              <p><span class="orange-color">10:00 - 16:00</span> (сб)</p>
-            </div>
-            <div class="nav-menu__work-time_basket">
-              <button><img src="/img/header/arrows.png" alt="" /></button>
-              <button><img src="/img/header/shopping-bag.png" alt="" /></button>
-            </div>
+          <div class="days-name"></div>
+          <div class="date">
+            <span>вс</span>
+            <span>пн</span>
+            <span>вт</span>
+            <span>ср</span>
+            <span>чт</span>
+            <span>пт</span>
+            <span>сб</span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
-      </div>
-    </nav>
-    <section>
-      <div class="container">
-        <div class="section1">
-          <h2>Шины и диски по лучшей <br />цене в Беларуси</h2>
-          <p>До конца августа <span class="orange-color">скидка 15%</span></p>
-          <div class="section1__buttons">
-            <button class="orange-color">ШИНЫ</button>
-            <button class="orange-color">ДИСКИ</button>
-          </div>
-          <div class="section1__circles">
-            <div class="section1__circles-item"></div>
-            <div class="section1__circles-item"></div>
-            <div class="section1__circles-item"></div>
-          </div>
+        <div class="two">
+            <div class="wrapper">
+                <button class="left"><</button>
+                <span class="mounth">test</span>
+                <button class="right">></button>
+              </div>
+              <div class="days-name"></div>
+              <div class="date">
+                <span>вс</span>
+                <span>пн</span>
+                <span>вт</span>
+                <span>ср</span>
+                <span>чт</span>
+                <span>пт</span>
+                <span>сб</span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+        </div>   
         </div>
       </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="section2">
-          <div class="section2__catalog1">
-            <h2>Каталог шин</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              mollitia quam recusandae doloribus? Consectetur aut rerum ratione
-              id unde quod.
-            </p>
-            <a href="#">Подробнее</a>
-          </div>
-          <div class="section2__catalog2">
-            <h2>Каталог дисков</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              mollitia quam recusandae doloribus? Consectetur aut rerum ratione
-              id unde quod.
-            </p>
-            <a href="#">Подробнее</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="section3">
-          <button><img src="/img/section3/left.png" alt="" /></button>
-          <div class="section3__item"><h4>Производитель шин</h4></div>
-          <div class="section3__item">
-            <h4>Производитель <br />дисков</h4>
-          </div>
-          <div class="section3__item"><h4>Сезон</h4></div>
-          <div class="section3__item">
-            <h4>
-              Посадочный <br />
-              диаметр
-            </h4>
-          </div>
-          <button><img src="/img/section3/right.png" alt="" /></button>
-        </div>
-      </div>
-    </section>
-    <main>
-      <div class="container">
-        <div class="section4">
-          <div class="section4__links">
-            <div class="section4__links-link"><a href="#">НОВЫЕ</a></div>
-            <div class="section4__links-link"><a href="#">ПОПУЛЯРНЫЕ</a></div>
-            <div class="section4__links-link"><a href="#">СКИДКИ</a></div>
-          </div>
-          <div class="section4__items">
-            <button><img src="/img/section4/left.png" alt="" /></button>
-            <div class="section4__items-card sale-block">
-              <div class="section4__items-card__foto">
-                <img src="/img/section4/1.png" alt="" />
-                <p>72 p.</p>
-              </div>
-              <div class="section4__items-card__info">
-                <p class="blue-color">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Mollitia, exercitationem.
-                </p>
-                <br />
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="section4__items-card__pay">
-                <button>В корзину</button>
-
-                <button><img src="/img/section4/arrows.png" alt="" /></button>
-              </div>
-            </div>
-            <div class="section4__items-card new-position">
-              <div class="section4__items-card__foto">
-                <img src="/img/section4/1.png" alt="" />
-                <p class="sale-p">
-                  72 p.
-                  <span>72 p.</span>
-                </p>
-              </div>
-              <div class="section4__items-card__info">
-                <p class="blue-color">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Mollitia, exercitationem.
-                </p>
-                <br />
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="section4__items-card__pay">
-                <button>В корзину</button>
-                <button><img src="/img/section4/arrows.png" alt="" /></button>
-              </div>
-            </div>
-            <div class="section4__items-card">
-              <div class="section4__items-card__foto">
-                <img src="/img/section4/1.png" alt="" />
-                <p>72 p.</p>
-              </div>
-              <div class="section4__items-card__info">
-                <p class="blue-color">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Mollitia, exercitationem.
-                </p>
-                <br />
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="section4__items-card__pay">
-                <button>В корзину</button>
-
-                <button><img src="/img/section4/arrows.png" alt="" /></button>
-              </div>
-            </div>
-            <div class="section4__items-card">
-              <div class="section4__items-card__foto">
-                <img src="/img/section4/1.png" alt="" />
-                <p>72 p.</p>
-              </div>
-              <div class="section4__items-card__info">
-                <p class="blue-color">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Mollitia, exercitationem.
-                </p>
-                <br />
-                <p>Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="section4__items-card__pay">
-                <button>В корзину</button>
-                <button><img src="/img/section4/arrows.png" alt="" /></button>
-              </div>
-            </div>
-            <button><img src="/img/section4/right.png" alt="" /></button>
-          </div>
-        </div>
-      </div>
-    </main>
-    <section>
-      <div class="container">
-        <div class="section5">
-          <div class="section5__sale">
-            <h2>Акция на шины скидка 50%</h2>
-            <div class="section5__sale-info">
-              <p class="sale-p">
-                72 p.
-                <span> 72 p.</span>
-              </p>
-              <p class="blue-color">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              </p>
-              <p>Lorem ipsum dolor sit.</p>
-            </div>
-            <div class="section5__pay">
-              <button>В корзину</button>
-              <button><img src="/img/section5/arrows.png" alt="" /></button>
-            </div>
-          </div>
-          <div class="section5__time-to-end-sale">
-            <p class="section5__time-to-end-sale__head-text white">
-              До конца акции осталось:
-            </p>
-            <div class="section5__time-to-end-sale__time">
-              <div>
-                <div class="day"><p class="black">545</p></div>
-                <p class="white">Дней</p>
-              </div>
-              <div>
-                <div class="hour"><p class="black">545</p></div>
-                <p class="white">Часов</p>
-              </div>
-              <div>
-                <div class="min"><p class="black">545</p></div>
-                <p class="white">Минут</p>
-              </div>
-              <div>
-                <div class="sec"><p class="black">545</p></div>
-                <p class="white">Секунд</p>
-              </div>
-            </div>
-            <div class="section5__time-to-end-sale__load">
-              <div class="section5__time-to-end-sale__load-2"></div>
-            </div>
-            <div class="section5__time-to-end-sale__info">
-              <p class="white">Продано:<span> 7</span></p>
-              <p class="white">Осталось:<span> 32</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
