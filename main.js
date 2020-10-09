@@ -105,7 +105,6 @@ function createdDaysNumber(selectedDateFromClicker) {
       span2[i].style.cursor = "default";
     } else if (monthCounter === newMonthCounter){
       let newDate = new Date(now.setFullYear(year, monthCounter, dayCounter));
-      console.log(newDate);
       span2[i].innerHTML = `${newDate.getDate()}`;
       span2[i].style.cursor = "pointer";
       dayCounter++
