@@ -1,5 +1,5 @@
 .calendar {
-  display: none;
+  display: block;
   min-width: 170px;
   position: relative;
 }

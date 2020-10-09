@@ -1,13 +1,22 @@
 "use strict";
 const span = document.querySelectorAll(".date-piker .calendar .one .date span");
+const span2 = document.querySelectorAll(
+  ".date-piker .calendar .two .date span"
+);
 const leftBtn1 = document.querySelector(
   ".date-piker .calendar .one .wrapper .left"
 );
 const rightBtn1 = document.querySelector(
   ".date-piker .calendar .one .wrapper .right"
 );
+const rightBtn2 = document.querySelector(
+  ".date-piker .calendar .two .wrapper .right"
+);
 const mounthAndYear = document.querySelector(
   ".date-piker .calendar .one .wrapper .mounth"
+);
+const mounthAndYear2 = document.querySelector(
+  ".date-piker .calendar .two .wrapper .mounth"
 );
 const input = document.querySelector(".date-piker input");
 const calendar = document.querySelector(".date-piker .calendar");
@@ -17,6 +26,9 @@ let globalNewDate = new Date();
 let globalYear = globalNewDate.getFullYear();
 let globalMonth = globalNewDate.getMonth();
 
+let yearFromCalendar2;
+let monthFromCalendar2;
+
 leftBtn1.addEventListener("click", function () {
   // диапазон месяцев от 0 до 11 и пытаюсь не дать выбраться за пределы >11 и <0
   globalMonth--;
@@ -25,11 +37,9 @@ leftBtn1.addEventListener("click", function () {
     globalYear--;
   }
   globalNewDate = new Date(globalYear, globalMonth, 1);
-  createdMonthNames(globalMonth);
-  createdDaysNumber(1, globalNewDate);
+  createdDaysNumber(globalNewDate);
 });
-
-rightBtn1.addEventListener("click", function () {
+rightBtn2.addEventListener("click", function () {
   // диапазон месяцев от 0 до 11 и пытаюсь не дать выбраться за пределы >11 и <0
   globalMonth++;
   if (globalMonth === 12) {
@@ -37,53 +47,80 @@ rightBtn1.addEventListener("click", function () {
     globalYear++;
   }
   globalNewDate = new Date(globalYear, globalMonth, 1);
-  createdMonthNames(globalMonth);
-  createdDaysNumber(1, globalNewDate);
+  createdDaysNumber(globalNewDate);
 });
 
 // заполняет числами дни на календаре
-function createdDaysNumber(cnt, selectedDateFromClicker) {
+function createdDaysNumber(selectedDateFromClicker) {
   let now;
   let month;
   let year;
   if (selectedDateFromClicker === undefined) {
     now = new Date();
-    month = now.getMonth();
+   month = now.getMonth();
+    // month = 0;
     year = now.getFullYear();
   } else {
     now = selectedDateFromClicker;
     month = selectedDateFromClicker.getMonth();
     year = selectedDateFromClicker.getFullYear();
   }
+  createdMonthNames(month)
+  //-------------------------переменные для цикла--------------------------------------------------------------
+  const setNewDate = new Date(now.setFullYear(year, month, 1)); // эммулируем начало месяца
+  const startDay = setNewDate.getDay()
+  let dayCounter = 1;
+  let monthCounter = month;
 
-  let count = cnt || 1; // первый день месяца, который будем увеличивать для отрисовки каждого дня
-  const setNewDate = new Date(now.setFullYear(year, month, count)); // эммулируем начало месяца
-  let startDay = setNewDate.getDay();
-  if (count !== 1) {
-    startDay = new Date(now.setFullYear(year, month, 1)).getDay(); // на каждом круге необходимо вернуть startDay в первоначальное положение
-  }
-  if (month !== setNewDate.getMonth()) {
-    for (let i = 7; i < 7 + startDay; i++) {
-      // это "фор" чистит спаны, которые уже не используются в текущем месяце перед первым числом
-      span[i].innerHTML = "";
+  for(let i = 7; i <span.length; i++) { 
+    if (i-startDay<7) {
+      span[i].innerHTML = ''
       span[i].style.cursor = "default";
+    } else if (monthCounter === month){
+      let newDate = new Date(now.setFullYear(year, month, dayCounter));
+      span[i].innerHTML = `${newDate.getDate()}`;
+      span[i].style.cursor = "pointer";
+      monthCounter=newDate.getMonth()
+      dayCounter++
     }
-    return; // если месяц изменился, то выходим из рекурсии.
-  }
-  // в формуле, что пониже:
-  // 7 - это пропускаем именованные span'ы(вс.пн.вт.ср.чт.пт.сб).
-  // startDay - это количество дней(спанов), которые надо пропустить для рисования. (пример: месяц начинается не с Воскресенья(1-ый спан), а с четверга(5-ый спан))
-  // count - каждое следующее число(нумерация дня) в месяце.
-  // 1 - просто отнять единичку, чтобы не было сдвига в спанах.
-  span[7 + startDay + count - 1].innerHTML = `${setNewDate.getDate()}`;
-  span[7 + startDay + count - 1].style.cursor = "pointer";
-  count++;
-  //--------------------------------------------------------------------
-  for (let i = 7 + startDay + count - 1; i < span.length; i++) {
-    span[i].innerHTML = ""; //Этот "фор" чистит спаны после последнего числа месяца.
+      if(monthCounter !== month) { 
+    span[i].innerHTML = ''
     span[i].style.cursor = "default";
+    dayCounter = 0
+    }
   }
-  createdDaysNumber(count, selectedDateFromClicker);
+  dayCounter = 1;
+  if(monthCounter === 0) {
+    year++
+  } 
+  const setNewDate2 = new Date(now.setFullYear(year, monthCounter, 1)); // эммулируем начало месяца
+  const startDay2 = setNewDate2.getDay()
+  let newMonthCounter = setNewDate2.getMonth()
+
+  yearFromCalendar2=setNewDate2.getFullYear();
+  monthFromCalendar2=setNewDate2.getMonth()
+  for(let i = 7; i <span2.length; i++) { 
+     if (i-startDay2<7) {
+      span2[i].innerHTML = ''
+      span2[i].style.cursor = "default";
+    } else if (monthCounter === newMonthCounter){
+      let newDate = new Date(now.setFullYear(year, monthCounter, dayCounter));
+      console.log(newDate);
+      span2[i].innerHTML = `${newDate.getDate()}`;
+      span2[i].style.cursor = "pointer";
+      dayCounter++
+      newMonthCounter = newDate.getMonth()
+     }
+    if(monthCounter!==newMonthCounter) {
+     span2[i].innerHTML = ''
+     span2[i].style.cursor = "default";
+     if(i===span2.length-1) { 
+      let newDate = new Date(now.setFullYear(year, newMonthCounter));
+      const y = newDate.getFullYear()
+      createdMonthNames2(monthCounter, y )
+     }
+    }
+  }
 }
 function createdMonthNames(mon) {
   switch (mon) {
@@ -127,7 +164,48 @@ function createdMonthNames(mon) {
       console.log("switch case упал");
   }
 }
-
+function createdMonthNames2(mon, y) {
+  switch (mon) {
+    case 0:
+      mounthAndYear2.innerHTML = `Январь ${y}`;
+      break;
+    case 1:
+      mounthAndYear2.innerHTML = `Февраль ${y}`;
+      break;
+    case 2:
+      mounthAndYear2.innerHTML = `Март ${y}`;
+      break;
+    case 3:
+      mounthAndYear2.innerHTML = `Апрель ${y}`;
+      break;
+    case 4:
+      mounthAndYear2.innerHTML = `Май ${y}`;
+      break;
+    case 5:
+      mounthAndYear2.innerHTML = `Июнь ${y}`;
+      break;
+    case 6:
+      mounthAndYear2.innerHTML = `Июль ${y}`;
+      break;
+    case 7:
+      mounthAndYear2.innerHTML = `Август ${y}`;
+      break;
+    case 8:
+      mounthAndYear2.innerHTML = `Сентябрь ${y}`;
+      break;
+    case 9:
+      mounthAndYear2.innerHTML = `Октябрь ${y}`;
+      break;
+    case 10:
+      mounthAndYear2.innerHTML = `Ноябрь ${y}`;
+      break;
+    case 11:
+      mounthAndYear2.innerHTML = `Декабрь ${y}`;
+      break;
+    default:
+      console.log("switch case упал");
+  }
+}
 let firstDateForInput = "";
 let secondDateForInput = "";
 
@@ -167,146 +245,15 @@ closeBtn.addEventListener("click", function () {
 createdMonthNames(globalMonth);
 createdDaysNumber();
 
-// ---------------------------!!!СПОСОБ ООООООООООООЧень топорный(просто копия кода выше)!!! я понимаю,
-//что это дубликат и можно оптимизировать введя пару новых переменных-------- второй календарик
-// либо переписать по новой, так как я изначально неправильно разбил проект на подзадачи.
-const span2 = document.querySelectorAll(
-  ".date-piker .calendar .two .date span"
-);
-const leftBtn2 = document.querySelector(
-  ".date-piker .calendar .two .wrapper .left"
-);
-const rightBtn2 = document.querySelector(
-  ".date-piker .calendar .two .wrapper .right"
-);
-const mounthAndYear2 = document.querySelector(
-  ".date-piker .calendar .two .wrapper .mounth"
-);
-
-let globalNewDate2 = new Date();
-let globalYear2 = globalNewDate.getFullYear();
-let globalMonth2 = globalNewDate.getMonth();
-
-leftBtn2.addEventListener("click", function () {
-  // диапазон месяцев от 0 до 11 и пытаюсь не дать выбраться за пределы >11 и <0
-  globalMonth2--;
-  if (globalMonth2 === -1) {
-    globalMonth2 = 11;
-    globalYear2--;
-  }
-  globalNewDate2 = new Date(globalYear2, globalMonth2, 1);
-  createdMonthNames2(globalMonth2);
-  createdDaysNumber2(1, globalNewDate2);
-});
-
-rightBtn2.addEventListener("click", function () {
-  // диапазон месяцев от 0 до 11 и пытаюсь не дать выбраться за пределы >11 и <0
-  globalMonth2++;
-  if (globalMonth2 === 12) {
-    globalMonth2 = 0;
-    globalYear2++;
-  }
-  globalNewDate2 = new Date(globalYear2, globalMonth2, 1);
-  createdMonthNames2(globalMonth2);
-  createdDaysNumber2(1, globalNewDate2);
-});
-function createdDaysNumber2(cnt, selectedDateFromClicker) {
-  let now;
-  let month;
-  let year;
-  if (selectedDateFromClicker === undefined) {
-    now = new Date();
-    month = now.getMonth();
-    year = now.getFullYear();
-  } else {
-    now = selectedDateFromClicker;
-    month = selectedDateFromClicker.getMonth();
-    year = selectedDateFromClicker.getFullYear();
-  }
-
-  let count = cnt || 1; // первый день месяца, который будем увеличивать для отрисовки каждого дня
-  const setNewDate = new Date(now.setFullYear(year, month, count)); // эммулируем начало месяца
-  let startDay = setNewDate.getDay();
-  if (count !== 1) {
-    startDay = new Date(now.setFullYear(year, month, 1)).getDay(); // на каждом круге необходимо вернуть startDay в первоначальное положение
-  }
-  if (month !== setNewDate.getMonth()) {
-    for (let i = 7; i < 7 + startDay; i++) {
-      // это "фор" чистит спаны, которые уже не используются в текущем месяце перед первым числом
-      span2[i].innerHTML = "";
-      span2[i].style.cursor = "default";
-    }
-    return; // если месяц изменился, то выходим из рекурсии.
-  }
-  // в формуле, что пониже:
-  // 7 - это пропускаем именованные span'ы(вс.пн.вт.ср.чт.пт.сб).
-  // startDay - это количество дней(спанов), которые надо пропустить для рисования. (пример: месяц начинается не с Воскресенья(1-ый спан), а с четверга(5-ый спан))
-  // count - каждое следующее число(нумерация дня) в месяце.
-  // 1 - просто отнять единичку, чтобы не было сдвига в спанах.
-  span2[7 + startDay + count - 1].innerHTML = `${setNewDate.getDate()}`;
-  span2[7 + startDay + count - 1].style.cursor = "pointer";
-  count++;
-  //--------------------------------------------------------------------
-  for (let i = 7 + startDay + count - 1; i < span2.length; i++) {
-    span2[i].innerHTML = ""; //Этот "фор" чистит спаны после последнего числа месяца.
-    span2[i].style.cursor = "default";
-  }
-  createdDaysNumber2(count, selectedDateFromClicker);
-}
-function createdMonthNames2(mon) {
-  switch (mon) {
-    case 0:
-      mounthAndYear2.innerHTML = `Январь ${globalYear2}`;
-      break;
-    case 1:
-      mounthAndYear2.innerHTML = `Февраль ${globalYear2}`;
-      break;
-    case 2:
-      mounthAndYear2.innerHTML = `Март ${globalYear2}`;
-      break;
-    case 3:
-      mounthAndYear2.innerHTML = `Апрель ${globalYear2}`;
-      break;
-    case 4:
-      mounthAndYear2.innerHTML = `Май ${globalYear2}`;
-      break;
-    case 5:
-      mounthAndYear2.innerHTML = `Июнь ${globalYear2}`;
-      break;
-    case 6:
-      mounthAndYear2.innerHTML = `Июль ${globalYear2}`;
-      break;
-    case 7:
-      mounthAndYear2.innerHTML = `Август ${globalYear2}`;
-      break;
-    case 8:
-      mounthAndYear2.innerHTML = `Сентябрь ${globalYear2}`;
-      break;
-    case 9:
-      mounthAndYear2.innerHTML = `Октябрь ${globalYear2}`;
-      break;
-    case 10:
-      mounthAndYear2.innerHTML = `Ноябрь ${globalYear2}`;
-      break;
-    case 11:
-      mounthAndYear2.innerHTML = `Декабрь ${globalYear2}`;
-      break;
-    default:
-      console.log("switch case упал");
-  }
-}
-
 span2.forEach(function (span) {
   span.addEventListener("click", function (event) {
     if (event.target.innerHTML !== "") {
       // собираем информацию и пушим в строку
-      secondDateForInput = `${globalYear2}/${globalMonth2 + 1}/${
+      secondDateForInput = `${yearFromCalendar2}/${monthFromCalendar2 + 1}/${
         event.target.innerHTML
       }`;
       createdDateInInput(firstDateForInput, secondDateForInput);
     }
-  });
+    });
 });
 
-createdMonthNames2(globalMonth);
-createdDaysNumber2();
